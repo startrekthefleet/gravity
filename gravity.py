@@ -7,8 +7,9 @@ from shutil import rmtree
 import os
 import shutil
 
-grav_project_template_dir = os.path.abspath("/opt/grav-1.7.42.3")
-grav_bin_dir = os.path.join(grav_project_template_dir, "bin/")
+grav_bin_path = os.path.realpath("/usr/local/bin/grav")
+grav_project_template_dir = os.path.abspath(os.path.join(grav_bin_path, "../.."))
+grav_bin_dir = os.path.abspath(os.path.join(grav_bin_path, ".."))
 
 # Setup parser
 parser = argparse.ArgumentParser(description="Project scaffolding tool for Grav (CMS)")
